@@ -61,11 +61,9 @@ footer{padding:28px 0;color:var(--muted);font-size:.88rem}
 
   <input class="name" id="nombre" type="text" placeholder="Tu nombre (opcional)" autocomplete="name">
 
-  <!-- Anuncio opcional: un solo bloque dentro de la página, sin tapar contenido. Borra desde aquí... -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4461032793780641" crossorigin="anonymous"></script>
   <ins class="adsbygoogle" style="display:block;margin-top:28px" data-ad-client="ca-pub-4461032793780641" data-ad-slot="1507456464" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-  <!-- ...hasta aquí si no quieres anuncios -->
 
   <footer>Jabonería Pétalo · Pedidos por WhatsApp</footer>
 </div>
@@ -78,17 +76,8 @@ footer{padding:28px 0;color:var(--muted);font-size:.88rem}
 </div>
 
 <script>
-/* ============ AQUÍ EDITAS TU TIENDA ============ */
-const WHATSAPP = "51942678163";   // número con código de país, sin +
-const MONEDA   = "S/";            // símbolo de moneda
-
-/* Para cada jabón:
-   nombre → título
-   desc   → descripción corta
-   precio → número, sin símbolo (ejemplo: 8.50)
-   imagen → ruta de la foto, ejemplo "img/lavanda.jpg".
-            Si el archivo no existe, se ve un bloque de color.
-   color  → color de relleno mientras no haya foto */
+const WHATSAPP = "51942678163";
+const MONEDA = "S/";
 const PRODUCTOS = [
   { nombre:"Lavanda y avena",   desc:"Suave para piel sensible.",                  precio:8,   imagen:"img/lavanda.jpg",   color:"#B8A9E8" },
   { nombre:"Eucalipto y menta", desc:"Fresco y limpio, ideal para la mañana.",     precio:8,   imagen:"img/eucalipto.jpg", color:"#8FC3AA" },
@@ -97,7 +86,6 @@ const PRODUCTOS = [
   { nombre:"Rosa y arcilla",    desc:"Aroma floral suave, arcilla rosada.",        precio:9.5, imagen:"img/rosa.jpg",      color:"#E9A9B8" },
   { nombre:"Sin aroma",         desc:"Solo aceites y karité. Para piel reactiva.", precio:7.5, imagen:"img/sinaroma.jpg",  color:"#DAD3C2" }
 ];
-/* ================================================= */
 
 const cart = {};
 const money = n => MONEDA + " " + n.toFixed(2);
