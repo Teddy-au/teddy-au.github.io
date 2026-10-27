@@ -1,131 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>BlackCode</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4461032793780641"
-     crossorigin="anonymous"></script>
-  
-    <style>
-    body {
-      background-color: black;
-      color: lime;
-      font-family: monospace;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pétalo · Jabones artesanales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Literata:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EFF3EE;--surface:#fff;--ink:#1E2B25;--muted:#55645B;--green:#3C6A58;--lav:#8A78C2;--line:#D5DDD6;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#16201B;--surface:#1F2D26;--ink:#E9EFEA;--muted:#A5B3AA;--green:#7DB8A0;--lav:#B4A6E3;--line:#304039;color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Literata,Georgia,serif;font-size:17px;line-height:1.6;padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.08;margin:0}
+:focus-visible{outline:3px solid var(--lav);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+header{padding:calc(18px + env(safe-area-inset-top,0px)) 0 8px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.3rem}
+.hero{padding:28px 0 36px}
+.hero h1{font-size:clamp(2.3rem,9vw,4.2rem);font-weight:800;letter-spacing:-.03em}
+.hero p{color:var(--muted);max-width:44ch;margin:16px 0 0}
+h2{font-size:1.7rem;margin-bottom:6px}
+.lead{color:var(--muted);margin:0 0 22px;font-size:.95rem}
+.grid{display:grid;grid-template-columns:1fr;gap:18px}
+@media (min-width:600px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.item.sel{border-color:var(--green);box-shadow:0 0 0 2px var(--green)}
+.ph{aspect-ratio:4/3;background:var(--c);position:relative}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.body h3{font-size:1.25rem}
+.body p{margin:0;color:var(--muted);font-size:.92rem;flex:1}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:4px}
+.price{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.2rem}
+.add{border:2px solid var(--green);background:transparent;color:var(--green);border-radius:12px;min-height:44px;padding:0 18px;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer}
+.step{display:flex;align-items:center;border:2px solid var(--green);border-radius:12px;overflow:hidden}
+.step button{width:44px;height:44px;border:0;background:var(--green);color:#fff;font-size:1.4rem;cursor:pointer}
+.step span{min-width:40px;text-align:center;font-weight:700}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));display:none;z-index:10}
+.bar.on{display:block}
+.bar .in{max-width:1000px;margin:0 auto;display:flex;gap:12px;align-items:center;justify-content:space-between}
+.bar b{font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem}
+.bar small{display:block;color:var(--muted);line-height:1.2}
+.send{background:var(--green);color:#fff;text-decoration:none;border-radius:14px;min-height:48px;padding:0 20px;display:inline-flex;align-items:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:700}
+.name{width:100%;margin-top:28px;padding:14px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+footer{padding:28px 0;color:var(--muted);font-size:.88rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>Pétalo</header>
+  <div class="hero">
+    <h1>Jabón hecho a mano, curado por semanas.</h1>
+    <p>Elige tus jabones, toca “Pedir por WhatsApp” y te respondemos para coordinar la entrega.</p>
+  </div>
 
-    a {
-      color: lime;
-      text-decoration: none;
-      border: 1px solid lime;
-      padding: 10px;
-      display: inline-block;
-      margin-top: 10px;
-    }
-      
-         .ads-top {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      text-align: center;
-      z-index: 1000;
-    }
-      .ads-bottom {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      z-index: 1000;
-    }
+  <h2>Elige tus jabones</h2>
+  <p class="lead">Toca “Agregar” en los que quieras. Puedes llevar varios de cada uno.</p>
+  <div class="grid" id="grid"></div>
 
-    .ads-left {
-      position: fixed;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1000;
-    }
+  <input class="name" id="nombre" type="text" placeholder="Tu nombre (opcional)" autocomplete="name">
 
-    .ads-right {
-      position: fixed;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1000;
-    }
-  </style>
-  </head>
-  <body>
-    
-    <div class="ads-top">
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4461032793780641"
-     data-ad-slot="1507456464"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-    
-<div class="ads-bottom">
-    <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-4461032793780641"
-     data-ad-slot="4101814306"></ins>
-  <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <!-- Anuncio opcional: un solo bloque dentro de la página, sin tapar contenido. Borra desde aquí... -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4461032793780641" crossorigin="anonymous"></script>
+  <ins class="adsbygoogle" style="display:block;margin-top:28px" data-ad-client="ca-pub-4461032793780641" data-ad-slot="1507456464" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  <!-- ...hasta aquí si no quieres anuncios -->
+
+  <footer>Jabonería Pétalo · Pedidos por WhatsApp</footer>
 </div>
 
-    <div class="ads-left">
-    <ins class="adsbygoogle"
-         style="display:block; width:120px; height:600px;"
-         data-ad-client="ca-pub-4461032793780641"
-         data-ad-slot="4101814306"
-         data-ad-format="vertical"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<div class="bar" id="bar">
+  <div class="in">
+    <div><b id="total"></b><small id="count"></small></div>
+    <a class="send" id="send" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
   </div>
-    
-      <div class="ads-right">
-    <ins class="adsbygoogle"
-         style="display:block; width:120px; height:600px;"
-         data-ad-client="ca-pub-4461032793780641"
-         data-ad-slot="4101814306"
-         data-ad-format="vertical"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-    
-    <div class="content">
-  <h1>Bienvenido a BlackCode</h1>
-  <p>Sitio estilo hacker activo.</p>
+</div>
 
-<p>Contáctame:</p>
-<a href="https://wa.me/51937447892" target="_blank" style="color: lime; text-decoration: none; border: 1px solid lime; padding: 10px; display: inline-block; margin-top: 10px;">
- WhatsApp
-</a>
-
-<br><br>
-
-<p>Grupo de WhatsApp</p>
-<a href="https://chat.whatsapp.com/C6FAzr74eTI9aQm1TgcGMF?mode=ac_t" target="_blank" style="color: lime; text-decoration: none; border: 1px solid lime; padding: 10px; display: inline-block;">
-   Unirse al Grupo
-</a>
-    
-<br><br>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-4461032793780641"
-     data-ad-slot="4101814306"></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+/* ============ AQUÍ EDITAS TU TIENDA ============ */
+const WHATSAPP = "51942678163";   // número con código de país, sin +
+const MONEDA   = "S/";            // símbolo de moneda
+
+/* Para cada jabón:
+   nombre → título
+   desc   → descripción corta
+   precio → número, sin símbolo (ejemplo: 8.50)
+   imagen → ruta de la foto, ejemplo "img/lavanda.jpg".
+            Si el archivo no existe, se ve un bloque de color.
+   color  → color de relleno mientras no haya foto */
+const PRODUCTOS = [
+  { nombre:"Lavanda y avena",   desc:"Suave para piel sensible.",                  precio:8,   imagen:"img/lavanda.jpg",   color:"#B8A9E8" },
+  { nombre:"Eucalipto y menta", desc:"Fresco y limpio, ideal para la mañana.",     precio:8,   imagen:"img/eucalipto.jpg", color:"#8FC3AA" },
+  { nombre:"Miel y cúrcuma",    desc:"Humectante, con miel natural.",              precio:9,   imagen:"img/miel.jpg",      color:"#EBC56E" },
+  { nombre:"Carbón activado",   desc:"Para piel grasa. Limpia sin resecar.",       precio:9,   imagen:"img/carbon.jpg",    color:"#7C8A85" },
+  { nombre:"Rosa y arcilla",    desc:"Aroma floral suave, arcilla rosada.",        precio:9.5, imagen:"img/rosa.jpg",      color:"#E9A9B8" },
+  { nombre:"Sin aroma",         desc:"Solo aceites y karité. Para piel reactiva.", precio:7.5, imagen:"img/sinaroma.jpg",  color:"#DAD3C2" }
+];
+/* ================================================= */
+
+const cart = {};
+const money = n => MONEDA + " " + n.toFixed(2);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function card(p,i){
+  const q = cart[i] || 0;
+  return `<article class="item${q?' sel':''}">
+    <div class="ph" style="--c:${p.color}"><img src="${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy" onerror="this.remove()"></div>
+    <div class="body"><h3>${esc(p.nombre)}</h3><p>${esc(p.desc)}</p>
+      <div class="row"><span class="price">${money(p.precio)}</span>
+      ${q ? `<div class="step"><button onclick="chg(${i},-1)" aria-label="Quitar uno">−</button><span>${q}</span><button onclick="chg(${i},1)" aria-label="Agregar uno">+</button></div>`
+          : `<button class="add" onclick="chg(${i},1)">Agregar</button>`}
+      </div></div></article>`;
+}
+function chg(i,d){cart[i]=Math.max(0,(cart[i]||0)+d);if(!cart[i])delete cart[i];render()}
+function render(){
+  document.getElementById('grid').innerHTML = PRODUCTOS.map(card).join('');
+  const ids = Object.keys(cart);
+  let total=0,count=0;
+  ids.forEach(i=>{total+=PRODUCTOS[i].precio*cart[i];count+=cart[i]});
+  document.getElementById('bar').classList.toggle('on',count>0);
+  document.getElementById('total').textContent = money(total);
+  document.getElementById('count').textContent = count + (count===1?" jabón":" jabones");
+  updateLink(ids,total);
+}
+function updateLink(ids,total){
+  const nombre=document.getElementById('nombre').value.trim();
+  const lineas=ids.map(i=>`${cart[i]} × ${PRODUCTOS[i].nombre} (${money(PRODUCTOS[i].precio*cart[i])})`);
+  const msg=`Hola${nombre?', soy '+nombre:''}. Quiero pedir:\n${lineas.join('\n')}\nTotal: ${money(total)}`;
+  document.getElementById('send').href=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+}
+document.getElementById('nombre').addEventListener('input',render);
+render();
 </script>
 </body>
 </html>
