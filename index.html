@@ -3,69 +3,160 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pétalo · Jabones artesanales</title>
+<title>E&amp;P · Jabones artesanales de aloe vera</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Literata:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#EFF3EE;--surface:#fff;--ink:#1E2B25;--muted:#55645B;--green:#3C6A58;--lav:#8A78C2;--line:#D5DDD6;color-scheme:light}
-@media (prefers-color-scheme:dark){:root{--bg:#16201B;--surface:#1F2D26;--ink:#E9EFEA;--muted:#A5B3AA;--green:#7DB8A0;--lav:#B4A6E3;--line:#304039;color-scheme:dark}}
+:root{--bg:#EAF4E6;--surface:#fff;--ink:#23412F;--muted:#58705F;--green:#3F7A52;--leaf1:#7FB28A;--leaf2:#4E8A5F;--leaf3:#A8CDA0;--peach:#F8DCCB;--line:#CFE2CC;color-scheme:light}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Literata,Georgia,serif;font-size:17px;line-height:1.6;padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
-h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.08;margin:0}
-:focus-visible{outline:3px solid var(--lav);outline-offset:3px}
-.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
-header{padding:calc(18px + env(safe-area-inset-top,0px)) 0 8px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.3rem}
-.hero{padding:28px 0 36px}
-.hero h1{font-size:clamp(2.3rem,9vw,4.2rem);font-weight:800;letter-spacing:-.03em}
-.hero p{color:var(--muted);max-width:44ch;margin:16px 0 0}
-h2{font-size:1.7rem;margin-bottom:6px}
-.lead{color:var(--muted);margin:0 0 22px;font-size:.95rem}
-.grid{display:grid;grid-template-columns:1fr;gap:18px}
-@media (min-width:600px){.grid{grid-template-columns:repeat(2,1fr)}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Nunito,system-ui,sans-serif;font-size:17px;line-height:1.65;padding-bottom:calc(100px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.05;margin:0}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.plant{position:fixed;bottom:0;width:clamp(80px,12vw,150px);aspect-ratio:120/400;pointer-events:none;z-index:0;opacity:.5;transform-origin:50% 100%}
+.plant.l{left:-40px}
+.plant.r{right:-40px;scale:-1 1}
+.l2,.r2{display:none}
+@media (min-width:800px){.plant{opacity:.85}.l2,.r2{display:block;width:80px;opacity:.4}.l2{left:70px}.r2{right:70px;scale:-1 1}.plant.l{left:-20px}.plant.r{right:-20px}}
+@media (prefers-reduced-motion:no-preference){.plant{animation:sway 7s ease-in-out infinite}.plant.r,.r2{animation-delay:-3s}.l2{animation-duration:9s}@keyframes sway{50%{rotate:2.5deg}}}
+.wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 22px}
+.mus{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:30;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;min-height:40px;padding:0 16px;font:inherit;font-size:.9rem;cursor:pointer}
+.mono{display:inline-grid;place-items:center;width:64px;height:84px;border:2px solid var(--ink);border-radius:50%;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-top:calc(26px + env(safe-area-inset-top,0px))}
+.hero{text-align:center;padding:18px 0 44px}
+.hero h1{font-style:italic;font-weight:500;font-size:clamp(3.4rem,16vw,6.5rem);letter-spacing:-.01em;margin-top:10px}
+.sub{max-width:34ch;margin:14px auto 26px;color:var(--muted);font-size:1.08rem}
+.photo{width:min(100%,380px);aspect-ratio:1;margin:0 auto 26px;border-radius:46% 54% 50% 50%/52% 48% 52% 48%;background:radial-gradient(circle at 30% 28%,#E3F4DC,#B9DDB0);overflow:hidden;box-shadow:0 18px 40px -18px rgba(35,65,47,.45)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;border-radius:999px;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:1.05rem}
+.pl{margin:14px 0 0;color:var(--muted)}
+section{padding:46px 0}
+h2{font-size:clamp(2rem,7vw,2.8rem);margin-bottom:8px}
+.lead{color:var(--muted);margin:0 0 24px;max-width:52ch}
+.grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media (min-width:620px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
-.item{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
-.item.sel{border-color:var(--green);box-shadow:0 0 0 2px var(--green)}
-.ph{aspect-ratio:4/3;background:var(--c);position:relative}
+.item{background:var(--surface);border:2px solid transparent;border-radius:26px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 28px -16px rgba(35,65,47,.4)}
+.item.sel{border-color:var(--green)}
+.ph{aspect-ratio:4/3;background:radial-gradient(circle at 30% 30%,#E3F4DC,var(--c))}
 .ph img{width:100%;height:100%;object-fit:cover;display:block}
-.body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
-.body h3{font-size:1.25rem}
-.body p{margin:0;color:var(--muted);font-size:.92rem;flex:1}
-.row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:4px}
-.price{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.2rem}
-.add{border:2px solid var(--green);background:transparent;color:var(--green);border-radius:12px;min-height:44px;padding:0 18px;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer}
-.step{display:flex;align-items:center;border:2px solid var(--green);border-radius:12px;overflow:hidden}
-.step button{width:44px;height:44px;border:0;background:var(--green);color:#fff;font-size:1.4rem;cursor:pointer}
-.step span{min-width:40px;text-align:center;font-weight:700}
-.bar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));display:none;z-index:10}
+.body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.body h3{font-size:1.7rem;font-style:italic;font-weight:500}
+.body p{margin:0;color:var(--muted);font-size:.95rem;flex:1}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px}
+.price{font-weight:700;font-size:1.3rem;line-height:1.1}
+.nota{display:block;font-size:.8rem;color:var(--muted);font-weight:400}
+.add{border:2px solid var(--green);background:transparent;color:var(--green);border-radius:999px;min-height:46px;padding:0 22px;font:inherit;font-weight:700;cursor:pointer}
+.step{display:flex;align-items:center;border:2px solid var(--green);border-radius:999px;overflow:hidden}
+.step button{width:46px;height:46px;border:0;background:var(--green);color:#fff;font-size:1.5rem;cursor:pointer}
+.step span{min-width:42px;text-align:center;font-weight:700}
+.datos{display:grid;gap:12px;margin-top:26px;max-width:520px}
+.datos input{width:100%;padding:15px 18px;border-radius:18px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+.ben{display:grid;grid-template-columns:1fr;gap:14px}
+@media (min-width:620px){.ben{grid-template-columns:repeat(2,1fr)}}
+.ben div{background:var(--surface);border-radius:22px;padding:18px 20px}
+.ben h3{font-size:1.5rem;font-style:italic;font-weight:500;margin-bottom:4px}
+.ben p{margin:0;color:var(--muted);font-size:.95rem}
+.hacemos{display:grid;gap:26px}
+@media (min-width:800px){.hacemos{grid-template-columns:1.2fr .8fr;align-items:start}}
+.pasos{margin:0;padding:0;list-style:none;counter-reset:p}
+.pasos li{counter-increment:p;position:relative;padding:0 0 18px 52px}
+.pasos li::before{content:counter(p);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--leaf3);display:grid;place-items:center;font-weight:700}
+.pasos b{display:block}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (min-width:800px){.pics{grid-template-columns:1fr}}
+.pics div{aspect-ratio:4/3;border-radius:24px;overflow:hidden;background:radial-gradient(circle at 30% 30%,#F6E6DA,var(--peach))}
+.pics img{width:100%;height:100%;object-fit:cover;display:block}
+.uso{display:grid;gap:14px}
+@media (min-width:700px){.uso{grid-template-columns:repeat(3,1fr)}}
+.uso div{background:var(--surface);border-radius:22px;padding:18px 20px}
+.uso h3{font-size:1.5rem;font-style:italic;font-weight:500;margin-bottom:6px}
+.uso p{margin:0;color:var(--muted);font-size:.95rem}
+footer{text-align:center;padding:34px 0 10px;color:var(--muted);font-size:.95rem}
+footer q{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--ink);display:block;margin-bottom:6px;quotes:none}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));display:none;z-index:25}
 .bar.on{display:block}
-.bar .in{max-width:1000px;margin:0 auto;display:flex;gap:12px;align-items:center;justify-content:space-between}
-.bar b{font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem}
+.bar .in{max-width:980px;margin:0 auto;display:flex;gap:12px;align-items:center;justify-content:space-between}
+.bar b{font-size:1.15rem}
 .bar small{display:block;color:var(--muted);line-height:1.2}
-.send{background:var(--green);color:#fff;text-decoration:none;border-radius:14px;min-height:48px;padding:0 20px;display:inline-flex;align-items:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:700}
-.name{width:100%;margin-top:28px;padding:14px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
-footer{padding:28px 0;color:var(--muted);font-size:.88rem}
+.send{background:var(--green);color:#fff;text-decoration:none;border-radius:999px;min-height:50px;padding:0 22px;display:inline-flex;align-items:center;font-weight:700}
 </style>
 </head>
 <body>
+<svg class="plant l" viewBox="0 0 120 400" aria-hidden="true"></svg>
+<svg class="plant l2" viewBox="0 0 120 400" aria-hidden="true"></svg>
+<svg class="plant r" viewBox="0 0 120 400" aria-hidden="true"></svg>
+<svg class="plant r2" viewBox="0 0 120 400" aria-hidden="true"></svg>
+
+<button class="mus" id="mus" aria-pressed="false" onclick="musica()">♪ Música</button>
+
 <div class="wrap">
-  <header>Pétalo</header>
   <div class="hero">
-    <h1>Jabón hecho a mano, curado por semanas.</h1>
-    <p>Elige tus jabones, toca “Pedir por WhatsApp” y te respondemos para coordinar la entrega.</p>
+    <span class="mono">E&amp;P</span>
+    <h1>Brisa tropical</h1>
+    <p class="sub">Jabón artesanal de aloe vera, hecho a mano en Perú para cuidar tu piel con calma.</p>
+    <div class="photo"><img src="img/brisa-tropical.jpg" alt="Jabón Brisa tropical de aloe vera" onerror="this.remove()"></div>
+    <a class="btn" href="#jabones">Elegir mi jabón</a>
+    <p class="pl">S/ 5 con delivery incluido</p>
   </div>
 
-  <h2>Elige tus jabones</h2>
-  <p class="lead">Toca “Agregar” en los que quieras. Puedes llevar varios de cada uno.</p>
-  <div class="grid" id="grid"></div>
+  <section id="jabones">
+    <h2>Elige tus jabones</h2>
+    <p class="lead">Toca “Agregar” y después “Pedir por WhatsApp”. Te respondemos para coordinar la entrega.</p>
+    <div class="grid" id="grid"></div>
+    <div class="datos">
+      <input id="nombre" type="text" placeholder="Tu nombre" autocomplete="name">
+      <input id="direccion" type="text" placeholder="Distrito o dirección de entrega" autocomplete="street-address">
+    </div>
+  </section>
 
-  <input class="name" id="nombre" type="text" placeholder="Tu nombre (opcional)" autocomplete="name">
+  <section>
+    <h2>Para qué sirve</h2>
+    <p class="lead">Un jabón pensado para el cuidado diario de la piel.</p>
+    <div class="ben">
+      <div><h3>Hidrata</h3><p>El aloe vera ayuda a que la piel se sienta suave después del baño.</p></div>
+      <div><h3>Refresca</h3><p>Deja una sensación ligera y fresca, sobre todo en días de calor.</p></div>
+      <div><h3>Limpia suavemente</h3><p>Hace una espuma suave que limpia sin sentirse áspera.</p></div>
+      <div><h3>Rostro y cuerpo</h3><p>Es apto para el uso diario, tanto en el rostro como en el cuerpo.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cómo lo hacemos</h2>
+    <p class="lead">Cada barra se hace a mano, en pocas cantidades.</p>
+    <div class="hacemos">
+      <ol class="pasos">
+        <li><b>Cortamos las pencas de sábila</b>Elegimos y limpiamos las pencas de aloe vera.</li>
+        <li><b>Sacamos la pulpa y el gel</b>Retiramos la pulpa con cuidado para usar el gel natural.</li>
+        <li><b>Derretimos la base</b>Calentamos la glicerina vegetal a fuego suave.</li>
+        <li><b>Mezclamos</b>Agregamos el gel de aloe vera, la vitamina E, la vitamina A y el aceite esencial.</li>
+        <li><b>Vertimos en moldes</b>Dejamos que el jabón repose hasta que endurezca.</li>
+        <li><b>Desmoldamos y envolvemos</b>Cortamos, etiquetamos y empacamos cada jabón a mano.</li>
+      </ol>
+      <div class="pics">
+        <div><img src="img/paso1.jpg" alt="Preparando el aloe vera" loading="lazy" onerror="this.remove()"></div>
+        <div><img src="img/paso2.jpg" alt="Vertiendo el jabón en los moldes" loading="lazy" onerror="this.remove()"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ingredientes y cuidados</h2>
+    <p class="lead">Vegano y sin parabenos.</p>
+    <div class="uso">
+      <div><h3>Ingredientes</h3><p>Pencas de sábila, gel natural de aloe vera, glicerina vegetal, aceite esencial de aloe vera, vitamina E y vitamina A.</p></div>
+      <div><h3>Modo de uso</h3><p>Humedece la piel y frota el jabón suavemente hasta generar espuma. Masajea la zona y enjuaga con abundante agua.</p></div>
+      <div><h3>Para que dure más</h3><p>Guárdalo en una jabonera seca entre usos.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <q>Todo lo puedo en Cristo que me fortalece. Filipenses 4:13</q>
+    Hecho a mano en Perú · WhatsApp 942678163
+  </footer>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4461032793780641" crossorigin="anonymous"></script>
-  <ins class="adsbygoogle" style="display:block;margin-top:28px" data-ad-client="ca-pub-4461032793780641" data-ad-slot="1507456464" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <ins class="adsbygoogle" style="display:block;margin-top:20px" data-ad-client="ca-pub-4461032793780641" data-ad-slot="1507456464" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-
-  <footer>Jabonería Pétalo · Pedidos por WhatsApp</footer>
 </div>
 
 <div class="bar" id="bar">
@@ -79,24 +170,29 @@ footer{padding:28px 0;color:var(--muted);font-size:.88rem}
 const WHATSAPP = "51942678163";
 const MONEDA = "S/";
 const PRODUCTOS = [
-  { nombre:"Lavanda y avena",   desc:"Suave para piel sensible.",                  precio:8,   imagen:"img/lavanda.jpg",   color:"#B8A9E8" },
-  { nombre:"Eucalipto y menta", desc:"Fresco y limpio, ideal para la mañana.",     precio:8,   imagen:"img/eucalipto.jpg", color:"#8FC3AA" },
-  { nombre:"Miel y cúrcuma",    desc:"Humectante, con miel natural.",              precio:9,   imagen:"img/miel.jpg",      color:"#EBC56E" },
-  { nombre:"Carbón activado",   desc:"Para piel grasa. Limpia sin resecar.",       precio:9,   imagen:"img/carbon.jpg",    color:"#7C8A85" },
-  { nombre:"Rosa y arcilla",    desc:"Aroma floral suave, arcilla rosada.",        precio:9.5, imagen:"img/rosa.jpg",      color:"#E9A9B8" },
-  { nombre:"Sin aroma",         desc:"Solo aceites y karité. Para piel reactiva.", precio:7.5, imagen:"img/sinaroma.jpg",  color:"#DAD3C2" }
+  { nombre:"Brisa tropical", desc:"Jabón de aloe vera de 120 g. Hidrata y refresca. Vegano y sin parabenos.", precio:5, nota:"Delivery incluido", imagen:"img/brisa-tropical.jpg", color:"#B9DDB0" }
 ];
+
+function rama(){
+  let h='<path d="M60 400C52 300 68 200 60 30" fill="none" stroke="var(--leaf2)" stroke-width="3" stroke-linecap="round"/>';
+  [330,280,230,180,130,80].forEach((y,k)=>{
+    const s=k%2===0?-1:1;
+    h+=`<path d="M60 ${y}C${60+s*22} ${y-4} ${60+s*42} ${y-22} ${60+s*50} ${y-48}C${60+s*24} ${y-46} ${60+s*4} ${y-28} 60 ${y}Z" fill="var(${['--leaf1','--leaf3','--leaf2'][k%3]})"/>`;
+  });
+  return h+'<path d="M60 30C48 20 50 6 60 0C70 6 72 20 60 30Z" fill="var(--leaf1)"/>';
+}
+document.querySelectorAll('.plant').forEach(s=>s.innerHTML=rama());
 
 const cart = {};
 const money = n => MONEDA + " " + n.toFixed(2);
-const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 function card(p,i){
   const q = cart[i] || 0;
   return `<article class="item${q?' sel':''}">
     <div class="ph" style="--c:${p.color}"><img src="${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy" onerror="this.remove()"></div>
     <div class="body"><h3>${esc(p.nombre)}</h3><p>${esc(p.desc)}</p>
-      <div class="row"><span class="price">${money(p.precio)}</span>
+      <div class="row"><span class="price">${money(p.precio)}<span class="nota">${esc(p.nota||'')}</span></span>
       ${q ? `<div class="step"><button onclick="chg(${i},-1)" aria-label="Quitar uno">−</button><span>${q}</span><button onclick="chg(${i},1)" aria-label="Agregar uno">+</button></div>`
           : `<button class="add" onclick="chg(${i},1)">Agregar</button>`}
       </div></div></article>`;
@@ -114,12 +210,36 @@ function render(){
 }
 function updateLink(ids,total){
   const nombre=document.getElementById('nombre').value.trim();
+  const dir=document.getElementById('direccion').value.trim();
   const lineas=ids.map(i=>`${cart[i]} × ${PRODUCTOS[i].nombre} (${money(PRODUCTOS[i].precio*cart[i])})`);
-  const msg=`Hola${nombre?', soy '+nombre:''}. Quiero pedir:\n${lineas.join('\n')}\nTotal: ${money(total)}`;
+  const msg=`Hola${nombre?', soy '+nombre:''}. Quiero pedir:\n${lineas.join('\n')}\nTotal: ${money(total)} (delivery incluido)${dir?'\nEntrega en: '+dir:''}`;
   document.getElementById('send').href=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 }
-document.getElementById('nombre').addEventListener('input',render);
+['nombre','direccion'].forEach(id=>document.getElementById(id).addEventListener('input',render));
 render();
+
+let ctx,master,on=false;
+function musica(){
+  const b=document.getElementById('mus');
+  if(!ctx){
+    ctx=new (window.AudioContext||window.webkitAudioContext)();
+    master=ctx.createGain();master.gain.value=0;master.connect(ctx.destination);
+    [220,277.18,329.63,440,554.37].forEach((f,i)=>{
+      const o=ctx.createOscillator(),g=ctx.createGain(),l=ctx.createOscillator(),lg=ctx.createGain();
+      o.type='sine';o.frequency.value=f;o.detune.value=i%2?4:-4;
+      g.gain.value=.12;l.frequency.value=.05+i*.03;lg.gain.value=.08;
+      l.connect(lg);lg.connect(g.gain);o.connect(g);g.connect(master);
+      o.start();l.start();
+    });
+  }
+  on=!on;
+  if(on)ctx.resume();
+  master.gain.cancelScheduledValues(ctx.currentTime);
+  master.gain.linearRampToValueAtTime(on?.2:0,ctx.currentTime+2);
+  if(!on)setTimeout(()=>{if(!on)ctx.suspend()},2200);
+  b.setAttribute('aria-pressed',on);
+  b.textContent=on?'♪ Música activada':'♪ Música';
+}
 </script>
 </body>
 </html>
